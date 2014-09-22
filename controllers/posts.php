@@ -1,18 +1,9 @@
-<?php
-
-class welcome extends Controller{
-
-	function index(){
-		$this->users = get_all("SELECT * FROM user");
-	}
-
-    function index_ajax(){
-		echo "\$_POST:<br>";
-        var_dump($_POST);
-    }
-
-	function index_post(){
-		echo "\$_POST:<br>";
-		var_dump($_POST);
-	}
-}
+<?foreach( $posts as $post ):?>
+<div class="span8">
+    <h1><?=$post['post_subject']?></h1>
+    <p><?=$post['post_text']?></p>
+    <div>
+        <span class="badge badge-success">Posted 2012-08-02 20:47:04</span><div class="pull-right"><span class="label">alice</span> <span class="label">story</span> <span class="label">blog</span> <span class="label">personal</span></div>
+    </div>
+</div>
+<?endforeach?>
