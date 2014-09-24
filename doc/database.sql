@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Sept 22, 2014 kell 02:55 PL
+-- Loomise aeg: Sept 24, 2014 kell 02:18 PL
 -- Serveri versioon: 5.6.20
 -- PHP versioon: 5.5.15
 
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   `post_text` text NOT NULL,
   `post_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Andmete tõmmistamine tabelile `post`
@@ -82,7 +82,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT tabelile `post`
 --
 ALTER TABLE `post`
-MODIFY `post_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `post_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT tabelile `user`
 --
