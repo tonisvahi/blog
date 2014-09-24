@@ -12,3 +12,13 @@
         <p><span class="badge"><?= $post['post_created'] ?></span>
         </p></div>
 </div>
+<h3>Comments</h3>
+<? foreach ($comments as $comment): ?>
+    <div class="well">
+        <p><?= $comment['comment_text'] ?></p>
+
+        <p><?= $comment['comment_created'] ?></p>
+
+        <p><?= $comment['username'] ?></p>
+    </div>
+<? endforeach ?>
