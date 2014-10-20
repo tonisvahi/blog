@@ -23,7 +23,17 @@ class posts extends Controller{
     }
 
     function index_post(){
-        echo "\$_POST:<br>";
-        var_dump($_POST);
+        $data = $_POST['data'];
+        $data['post_id'] = $this->params[0];
+        $data['user_id'] = '1';
+        insert('post', $data);
+    }
+
+    function view_post(){
+        $data = $_POST['data'];
+        $data['post_id'] = $this->params[0];
+        $data['user_id'] = 1;
+        insert('comment', $data);
+
     }
 }

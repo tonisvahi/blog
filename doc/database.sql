@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Sept 24, 2014 kell 05:25 PL
+-- Loomise aeg: Okt 20, 2014 kell 01:17 PL
 -- Serveri versioon: 5.6.20
 -- PHP versioon: 5.5.15
 
@@ -14,6 +14,31 @@ SET time_zone = "+00:00";
 --
 -- Andmebaas: `blog`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `comment`
+--
+
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE IF NOT EXISTS `comment` (
+`comment_id` int(11) unsigned NOT NULL,
+  `comment_text` varchar(500) NOT NULL,
+  `comment_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `user_id` int(11) unsigned NOT NULL,
+  `post_id` int(11) unsigned NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Andmete tõmmistamine tabelile `comment`
+--
+
+INSERT INTO `comment` (`comment_id`, `comment_text`, `comment_created`, `user_id`, `post_id`) VALUES
+(1, 'asdasdasdd', '2014-09-24 18:52:58', 1, 1),
+(2, 'asdsadsaasdasdsadsa', '2014-10-20 14:12:55', 1, 1),
+(3, 'sadsad', '2014-10-20 14:12:58', 1, 1),
+(4, 'asfdfdsfsdfdf', '2014-10-20 14:13:05', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -103,6 +128,12 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`) VALUES
 --
 
 --
+-- Indeksid tabelile `comment`
+--
+ALTER TABLE `comment`
+ ADD PRIMARY KEY (`comment_id`), ADD KEY `user_id` (`user_id`,`post_id`), ADD KEY `post_id` (`post_id`);
+
+--
 -- Indeksid tabelile `post`
 --
 ALTER TABLE `post`
@@ -131,6 +162,11 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT tabelile `comment`
+--
+ALTER TABLE `comment`
+MODIFY `comment_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT tabelile `post`
 --
 ALTER TABLE `post`
@@ -148,6 +184,13 @@ MODIFY `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Tõmmistatud tabelite piirangud
 --
+
+--
+-- Piirangud tabelile `comment`
+--
+ALTER TABLE `comment`
+ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
+ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`);
 
 --
 -- Piirangud tabelile `post`
