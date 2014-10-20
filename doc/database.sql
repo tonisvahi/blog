@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Okt 20, 2014 kell 01:17 PL
+-- Loomise aeg: Okt 20, 2014 kell 01:24 PL
 -- Serveri versioon: 5.6.20
 -- PHP versioon: 5.5.15
 
@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `comment`;
 CREATE TABLE IF NOT EXISTS `comment` (
 `comment_id` int(11) unsigned NOT NULL,
   `comment_text` varchar(500) NOT NULL,
-  `comment_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `comment_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_id` int(11) unsigned NOT NULL,
   `post_id` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
@@ -35,10 +35,10 @@ CREATE TABLE IF NOT EXISTS `comment` (
 --
 
 INSERT INTO `comment` (`comment_id`, `comment_text`, `comment_created`, `user_id`, `post_id`) VALUES
-(1, 'asdasdasdd', '2014-09-24 18:52:58', 1, 1),
-(2, 'asdsadsaasdasdsadsa', '2014-10-20 14:12:55', 1, 1),
-(3, 'sadsad', '2014-10-20 14:12:58', 1, 1),
-(4, 'asfdfdsfsdfdf', '2014-10-20 14:13:05', 1, 1);
+(1, 'asdasdasdd', '2014-09-24 15:52:58', 1, 1),
+(2, 'asdsadsaasdasdsadsa', '2014-10-20 11:12:55', 1, 1),
+(3, 'sadsad', '2014-10-20 11:12:58', 1, 1),
+(4, 'asfdfdsfsdfdf', '2014-10-20 11:13:05', 1, 1);
 
 -- --------------------------------------------------------
 
